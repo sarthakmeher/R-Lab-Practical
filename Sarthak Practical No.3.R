@@ -8,12 +8,12 @@ sum(is.na(airquality))
 airquality$Ozone[is.na(airquality$Ozone)] <- median(airquality$Ozone, na.rm = TRUE)
 
 #3.Create a duplicate dataset from mtcars and remove the duplicates
-data("airquality")
-airquality_duplicates <- rbind(airquality, airquality) #add duplicates
-nrow(airquality_duplicates) #before removing
+data("mtcars")
+mtcars_duplicates <- rbind(mtcars, mtcars) #add duplicates
+nrow(mtcars_duplicates) #before removing
 
-airquality_clean <- unique(airquality_duplicates) #remove duplicates
-nrow(airquality_clean) #after removing
+mtcars_clean <- unique(airquality_duplicates) #remove duplicates
+nrow(mtcars_clean) #after removing
 
 #4.Convert all car names in mtcars row names to uppercase
 rownames(mtcars) <- toupper(rownames(mtcars))
@@ -23,3 +23,4 @@ head(mtcars)
 View(iris)
 iris$Species_num <- as.numeric(factor(iris$Species))
 head(iris[, c("Species", "Species_num")])
+
